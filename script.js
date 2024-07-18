@@ -6,36 +6,35 @@ const body = document.querySelector('.main-content');
 function pageTransition() {
   // Button click active class
   controlBtns.forEach((btn) => {
-    btn.addEventListener('click', function () {
+    btn.addEventListener('click', function (e) {
       let currentBtn = document.querySelector('.active-btn');
 
       currentBtn.className = currentBtn.className.replace('active-btn', '');
       this.className += ' active-btn';
+
+      changePages(e);
     });
   });
-
-  //   for (let i = 0; i < controlBtns.length; i++) {
-  //     controlBtns[i].addEventListener('click', function () {
-  //       let currentBtn = document.querySelector('.active-btn');
-
-  //       currentBtn.className = currentBtn.className.replace('active-btn', '');
-  //       this.className += ' active-btn';
-  //     });
-  //   }
 }
 
 pageTransition();
 
-// controlBtns.forEach((btn) => {
-//   btn.addEventListener('click', () => {
-//     removeAll();
+function changePages(e) {
+  const id = e.target.dataset.id;
 
-//     btn.classList.add('active-btn');
-//   });
-// });
+  //   if (id) {
+  //     // Remove current active class
+  //     controlBtns.forEach((btn) => {
+  //       btn.classList.remove('active');
+  //     });
+  //     e.target.classList.add('active');
+  //   }
 
-// function removeAll() {
-//   controlBtns.forEach((btn) => {
-//     btn.classList.remove('active-btn');
-//   });
-// }
+  // Hide other sections
+  sections.forEach((section) => {
+    section.classList.remove('active');
+  });
+
+  const element = document.getElementById(id);
+  element.classList.add('active');
+}
