@@ -49,11 +49,8 @@ header {
 
 section {
     min-height: 100vh;
-    width: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    padding: 3rem 13rem;
+    width: 80%;
+    margin: 3rem auto;
 }
 
 .section {
@@ -149,6 +146,7 @@ section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     height: 100%;
+    margin: 0 auto;
     
     .left-header {
         display: flex;
@@ -194,7 +192,7 @@ section {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding-right: 13rem;
+        padding-right: 11rem;
 
         .name {
             font-size: 3rem;
@@ -215,9 +213,22 @@ section {
 .about-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    padding-top: 3.5rem;
+    padding-top: 3rem;
     padding-bottom: 3rem;
-    grid-gap: 2rem;
+    grid-gap: 3rem;
+
+    .left-about {
+        p {
+            line-height: 1.5rem;
+            margin-block: 1rem;
+            color: var(--color-grey1);
+        }
+
+        h4 {
+            font-size: 2rem;
+            text-transform: uppercase;
+        }
+    }
 
     .right-about {
         display: grid;
@@ -259,14 +270,150 @@ section {
                 &::before {
                     content: '';
                     position: absolute;
-                    top: 15px;
-                    left: 0;
-                    width: 2rem;
+                    top: 10px;
+                    left: 15px;
+                    width: 1.5rem;
                     height: 2px;
-                    background-color: var(--color-grey5);
+                    background-color: var(--color-grey2);
                 }
                }
             }
+        }
+    }
+}
+
+.about-stats {
+    padding-block: 4rem;
+
+    .progress-bars {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 2rem;
+
+        .progress-bar {
+            display: flex;
+            flex-direction: column;
+
+            .prog-title {
+                text-transform: uppercase;
+                font-weight: 500;
+            }
+
+            .progress-con {
+                display: flex;
+                align-items: center;
+
+                .prog-text {
+                    color: var(--color-grey2);
+                }
+
+                .progress {
+                    width: 100%;
+                    height: .45rem;
+                    background-color: var(--color-grey4);
+                    margin-left: 1rem;
+                    position: relative;
+
+                    span {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        height: 100%;
+                        background-color: var(--color-secondary);   
+                    }
+
+                    .html {
+                        width: 90%;
+                    }
+
+                    .javascript {
+                        width: 65%;
+                    }
+
+                    .react {
+                        width: 10%;
+                    }
+
+                    .typescript {
+                        width: 0%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.stat-title {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 3.5rem 0;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 0;
+        width: 40%;
+        height: 1px;
+        background-color: var(--color-grey3);
+        transform: translate(-50%, -50%);
+    }
+}
+
+// Timeline
+.timeline {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: 2rem;
+    grid-gap: 3rem;
+
+    .timeline-item {
+        display: flex;
+        gap: 1.5rem;
+        border-left: 1px solid var(--color-grey5);
+
+        .tl-icon {
+            background-color: var(--color-secondary);
+            width: 2.9rem;
+            height: 2.8rem;
+            padding: 1rem;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+
+            i {
+                font-size: 1.1rem
+            }
+        }
+
+        .tl-duration {
+            padding: .2rem .6rem;
+            background-color: var(--color-grey4);
+            border-radius: 15px;
+            display: inline-block;
+            font-size: .8rem;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        h5 {
+            padding: .6rem 0;
+            text-transform: uppercase;
+            font-size: 1.3rem;
+            font-weight: 600;
+
+            span {
+                color: var(--color-grey2);
+                font-weight: 500;
+                font-size: 1.2rem;
+            }
+        }
+
+        p {
+            color: var(--color-grey2);
         }
     }
 }
@@ -334,6 +481,7 @@ section {
     }
 }
 
+// Main title
 .main-title {
     text-align: center;
 
